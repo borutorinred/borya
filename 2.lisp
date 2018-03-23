@@ -1,3 +1,2 @@
-(DEFUN LIST1 (X Y)
-       (CONS X Y))
-(PRINT (LIST1 'A 'B))
+(defun LIST1 (x y) (cons x (cons y nil)))
+(print (LIST1 'A 'B))
