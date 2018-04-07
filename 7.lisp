@@ -1,18 +1,32 @@
-(defun myappend(L1 L2) (COND ((null L1) L2) 
-                             (T (cons (car L1) (myappend (cdr L1) L2) ) ) ) )
+              
+                (DEFUN SORTIRIVKA1 (KURWA)
 
-(DEFUN BUBLESORT (LST) 
-       (COND ((NULL LST) 
-              (NIL) ) 
-             ((NULL (CDR LST) ) 
-              (CONS (CAR LST) NIL) ) 
-             ( (> (CAR LST) (CADR LST)) 
-              (CONS (CADR LST)(BUBLESORT (CONS (CAR LST) (CDDR LST) ) ) ) ) 
-             (T (CONS (CAR LST) (BUBLESORT (CDR LST) ) ))) )
+                (COND
 
-(DEFUN SORT1(LST &OPTIONAL(N 0) ) (COND ((< N (LENGTH LST)) (SORT1 (BUBLESORT LST ) (+ N 1) ) ) (T LST) ) ) 
+                 ((ATOM (CDR KURWA)) KURWA)
+
+                 ((> (CAR KURWA) (CADR KURWA)) (CONS(CADR KURWA) (SORTIRIVKA1 (CONS (CAR KURWA) (CDDR KURWA)))))
+
+                 (T KURWA)   
+
+                )
+
+              )
+              (DEFUN SORTIRIVKA (KURWA)
+
+                (COND 
+
+                 ((ATOM (CDR KURWA)) KURWA)
+
+                 (T (SORTIRIVKA1 (CONS (CAR KURWA) (SORTIRIVKA (CDR KURWA)))))
+
+                )
+
+              )
 
 
-(DEFUN MERGE1(L1 L2) (SORT1 (MYAPPEND L1 L2 )))
+
+
+(DEFUN MERGE1(X Y) (SORTIRIVKA (append X Y )))
 
 (PRINT (MERGE1 '(1 3 5) '(2 4) ) )
