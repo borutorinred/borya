@@ -1,7 +1,7 @@
-(DEFUN ATOMS (LST)(
-                   COND((NULL LST) NIL)
-                   ((ATOM (CAR LST)) (APPEND (CONS (CAR LST) NIL ) (ATOMS (CDR LST) ) ))
-                   (T ( APPEND ( ATOMS ( CAR LST))( ATOMS ( CDR LST ) ) ) ))
-       )
+(DEFUN ATOMS (AIDS)
+                   (COND((ATOM AIDS ) AIDS)
+                   ((ATOM (CAR AIDS)) (CONS (CAR AIDS))(ATOMS (CDR AIDS) ) ))
+                   (T ( APPEND ( ATOMS ( CAR AIDS))( ATOMS ( CDR AIDS ) ))))
+          )
 
 (PRINT (ATOMS '((A B) C NIL (D (E F G)))))
