@@ -1,5 +1,5 @@
 (DEFUN ATOMS (AIDS)
-                   (COND((ATOM AIDS ) AIDS)
+                  (COND((ATOM AIDS ) AIDS)
                    ((ATOM (CAR AIDS)) (CONS (CAR AIDS))(ATOMS (CDR AIDS) ) ))
                    (T ( APPEND ( ATOMS ( CAR AIDS))( ATOMS ( CDR AIDS ) ))))
           )
