@@ -20,7 +20,7 @@
 
                  (T (SORTIRIVKA1 (CONS (CAR KURWA) (SORTIRIVKA (CDR KURWA)))))
 
-                )
+                 )
 
               )
 
