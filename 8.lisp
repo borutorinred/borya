@@ -1,5 +1,5 @@
 (DEFUN SORT11 (KURWA)
-                (COND
+                ( COND
                  ((ATOM (CDR KURWA)) KURWA)
                  ((> (CAR KURWA) (CADR KURWA)) (CONS(CADR KURWA) (SORT11 (CONS (CAR KURWA) (CDDR KURWA)))))
                  (T KURWA)   
