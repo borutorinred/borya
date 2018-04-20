@@ -1,0 +1,6 @@
+ (defun PERMUT (ggwp) 
+(if (null ggwp) '(()) 
+(mapcan #'(lambda (a) 
+(mapcar #'(lambda (b) (cons a b)) 
+(PERMUT (remove a ggwp :count 1)))) ggwp))) 
+(PRINT(PERMUT '(1 2 3)))
